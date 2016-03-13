@@ -226,6 +226,7 @@ public class MainActivity extends ListActivity implements QueryInterface {
         /*
             On Swipe Part -> move to widget
          */
+        /*
         findViewById(android.R.id.list).setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
             @Override
             public void onSwipeLeft() {
@@ -235,6 +236,7 @@ public class MainActivity extends ListActivity implements QueryInterface {
                 startActivity(intent);
             }
         });
+        */
 
         // Hide the "X" after the text field, instead displaying the menu button
         displayClearOnInput();
