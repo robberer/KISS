@@ -13,8 +13,8 @@
         android:layout_above="@+id/searchEditLayout"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
         android:background="?attr/listBackgroundColor"
         android:cacheColorHint="@android:color/transparent"
         android:divider="?attr/dividerDrawable"
@@ -27,14 +27,14 @@
     <RelativeLayout
         android:id="@+id/searchEditLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_margin="10dp"
+        android:layout_margin="0dp"
         android:background="?attr/searchBackgroundColor"
         android:clipToPadding="false"
         android:elevation="2dp"
-        android:padding="4dp">
+        android:padding="0dp">
 
         <ImageView
             android:id="@+id/launcherButton"
@@ -70,7 +70,7 @@
             android:layout_toLeftOf="@+id/clearButton"
             android:layout_toRightOf="@+id/launcherButton"
             android:layout_toStartOf="@+id/clearButton"
-            android:background="?attr/searchBackgroundColor"
+            android:background="?attr/listBackgroundColor"
             android:hint="@string/ui_search_hint"
             android:imeOptions="flagNoExtractUi|actionSearch"
             android:inputType="textVisiblePassword|textNoSuggestions"
@@ -78,7 +78,7 @@
             android:textColor="?attr/searchColor"
             android:textColorHint="?android:attr/textColorSecondary"
             android:textCursorDrawable="@drawable/cursor"
-            android:textSize="16sp"/>
+            android:textSize="18sp"/>
 
         <ImageView
             android:id="@+id/menuButton"
@@ -135,7 +135,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_below="@android:id/list"
-        android:layout_margin="10dp"
+        android:layout_margin="0dp"
         android:visibility="gone"/>
 
 </RelativeLayout>

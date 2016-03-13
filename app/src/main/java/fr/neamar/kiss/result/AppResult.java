@@ -21,9 +21,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import fr.neamar.kiss.KissApplication;
-import fr.neamar.kiss.MainActivity;
 import fr.neamar.kiss.R;
 import fr.neamar.kiss.adapter.RecordAdapter;
+import fr.neamar.kiss.normalizer.ColorNormalizer;
 import fr.neamar.kiss.pojo.AppPojo;
 
 public class AppResult extends Result {
@@ -164,7 +164,8 @@ public class AppResult extends Result {
     public Drawable getDrawable(Context context) {
         
         if (icon == null) {
-             icon = KissApplication.getIconsHandler(context).getDrawableIconForPackage(className);             
+            Drawable mDrawable = KissApplication.getIconsHandler(context).getDrawableIconForPackage(className);
+            icon = ColorNormalizer.convertToGrayscale(mDrawable);
         }
                 
         return icon;

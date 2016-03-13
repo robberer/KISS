@@ -3,6 +3,7 @@ package fr.neamar.kiss.loader;
 import android.content.ContentUris;
 import android.content.Context;
 import android.database.Cursor;
+import android.net.Uri;
 import android.provider.ContactsContract;
 import android.util.Log;
 
@@ -37,6 +38,7 @@ public class LoadContactsPojos extends LoadPojos<ContactsPojo> {
                         ContactsContract.CommonDataKinds.Phone.STARRED,
                         ContactsContract.CommonDataKinds.Phone.IS_PRIMARY,
                         ContactsContract.CommonDataKinds.Phone.LAST_TIME_CONTACTED,
+                        ContactsContract.PhoneLookup._ID,
                         ContactsContract.Contacts.PHOTO_ID}, null, null, ContactsContract.CommonDataKinds.Phone.TIMES_CONTACTED + " DESC");
 
         // Prevent duplicates by keeping in memory encountered phones.
@@ -57,6 +59,8 @@ public class LoadContactsPojos extends LoadPojos<ContactsPojo> {
                             .getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME)));
                     contact.lastTimeContacted = DateNormalizer.normalizeDate(Long.parseLong(cur.getString(cur
                             .getColumnIndex(ContactsContract.Contacts.LAST_TIME_CONTACTED))));
+                    contact._id = Long.parseLong(cur.getString(cur
+                            .getColumnIndex(ContactsContract.PhoneLookup._ID)));
                     contact.phone = PhoneNormalizer.normalizePhone(cur.getString(cur
                             .getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER)));
                     if (contact.phone == null) {
@@ -103,11 +107,11 @@ public class LoadContactsPojos extends LoadPojos<ContactsPojo> {
             // Find primary phone and add this one.
             Boolean hasPrimary = false;
             for (ContactsPojo contact : phones) {
-                if (contact.primary) {
-                    contacts.add(contact);
-                    hasPrimary = true;
-                    break;
-                }
+                //if (contact.primary) {
+                //    contacts.add(contact);
+                //    hasPrimary = true;
+                //    break;
+                //}
             }
 
             // If not available, add all (excluding duplicates).

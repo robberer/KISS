@@ -1,10 +1,13 @@
 package fr.neamar.kiss.broadcast;
 
 import android.content.BroadcastReceiver;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.telephony.SmsMessage;
+import android.util.Log;
 
 import fr.neamar.kiss.DataHandler;
 import fr.neamar.kiss.KissApplication;
@@ -22,12 +25,13 @@ public class IncomingSmsHandler extends BroadcastReceiver {
         // Stop if contacts are not enabled
         DataHandler dataHandler = KissApplication.getDataHandler(context);
         ContactsProvider contactsProvider = dataHandler.getContactsProvider();
+
+        contactsProvider.reload();
+
         if (contactsProvider == null) {
             // Contacts have been disabled from settings
             return;
         }
-
-        contactsProvider.reload();
 
         // Get the SMS message passed in, if any
         Bundle bundle = intent.getExtras();
@@ -45,7 +49,11 @@ public class IncomingSmsHandler extends BroadcastReceiver {
         ContactsPojo contactPojo = contactsProvider.findByPhone(msg.getOriginatingAddress());
         if (contactPojo != null) {
             // We have a match!
+            Log.e("ROBO", msg.getOriginatingAddress());
+            ContentResolver resolver = context.getContentResolver();
+            ContactsContract.Contacts.markAsContacted(resolver, contactPojo._id);
             dataHandler.addToHistory(contactPojo.id);
+            contactsProvider.reload();
         }
     }
 }

@@ -12,7 +12,7 @@
         android:layout_height="32dp"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="6dp"
+        android:layout_marginLeft="1dp"
         android:contentDescription="@string/main_kiss_back"
         android:focusable="true"
         android:onClick="onLauncherButtonClicked"

@@ -201,7 +201,7 @@ public abstract class Result {
      * @return text displayable on a textview
      */
     Spanned enrichText(String text) {
-        return Html.fromHtml(text.replaceAll("\\{", "<font color=#4caf50>").replaceAll("\\}", "</font>"));
+        return Html.fromHtml(text.replaceAll("\\{", "<font color=#ff5b52>").replaceAll("\\}", "</font>"));
     }
 
     /**

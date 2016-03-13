@@ -23,4 +23,6 @@ public class ContactsPojo extends Pojo {
     public Boolean homeNumber = false;
 
     public String lastTimeContacted = "";
+
+    public Long _id = 0L;
 }

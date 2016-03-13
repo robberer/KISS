@@ -20,6 +20,7 @@ import android.support.annotation.NonNull;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.ContextMenu;
 import android.view.KeyEvent;
@@ -221,6 +222,19 @@ public class MainActivity extends ListActivity implements QueryInterface {
         if (prefs.getBoolean("enable-spellcheck", false)) {
             searchEditText.setInputType(spellcheckEnabledType);
         }
+
+        /*
+            On Swipe Part -> move to widget
+         */
+        findViewById(android.R.id.list).setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
+            @Override
+            public void onSwipeLeft() {
+                // Whatever
+                Log.e("ROBO", "swipe left");
+                Intent intent = new Intent(getApplication(), WidgetActivity.class);
+                startActivity(intent);
+            }
+        });
 
         // Hide the "X" after the text field, instead displaying the menu button
         displayClearOnInput();

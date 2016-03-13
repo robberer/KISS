@@ -1,8 +1,10 @@
 package fr.neamar.kiss.broadcast;
 
 import android.content.BroadcastReceiver;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.provider.ContactsContract;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
@@ -37,7 +39,10 @@ public class IncomingCallHandler extends BroadcastReceiver {
 
                 ContactsPojo contactPojo = contactsProvider.findByPhone(phoneNumber);
                 if (contactPojo != null) {
+                    ContentResolver resolver = context.getContentResolver();
+                    ContactsContract.Contacts.markAsContacted(resolver, contactPojo._id);
                     dataHandler.addToHistory(contactPojo.id);
+                    contactsProvider.reload();
                 }
             }
         } catch (Exception e) {
