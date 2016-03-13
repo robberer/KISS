@@ -18,6 +18,7 @@
         android:layout_marginRight="@dimen/icon_margin_right"
         android:layout_marginTop="@dimen/icon_margin_top"
         android:contentDescription="@null"
+        android:tint="@color/kiss_green"
         android:src="@drawable/call"/>
 
     <TextView

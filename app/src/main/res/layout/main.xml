@@ -48,6 +48,7 @@
             android:paddingLeft="6dp"
             android:paddingRight="10dp"
             android:src="@drawable/ic_launcher"
+            android:tint="@color/kiss_green"
             android:tag="showMenu"/>
 
         <ProgressBar
