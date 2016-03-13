@@ -1,3 +1,6 @@
+|![Preview](http://s16.postimg.org/y2ktfltt1/S60313_103520.jpg)| 
+
+
 KISS
 ======
 KISS is a *blazingly* fast launcher for android requiring nearly no memory to run.
