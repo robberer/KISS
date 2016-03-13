@@ -47,6 +47,8 @@ public class AppResult extends Result {
 
         TextView appName = (TextView) v.findViewById(R.id.item_app_name);
         appName.setText(enrichText(appPojo.displayName));
+        TextView packageName = (TextView) v.findViewById(R.id.item_app_package_name);
+        packageName.setText(enrichText(appPojo.packageName));
 
 
         final ImageView appIcon = (ImageView) v.findViewById(R.id.item_app_icon);
