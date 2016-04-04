@@ -7,6 +7,7 @@
         <item>Semi-transparent theme</item>
         <item>Dark semi-transparent theme</item>
         <item>Dark transparent theme</item>
+        <item>Dark transparent theme Robo</item>
     </string-array>
     <string-array name="themesValues">
         <item>light</item>
@@ -15,6 +16,7 @@
         <item>semi-transparent</item>
         <item>semi-transparent-dark</item>
         <item>transparent-dark</item>
+        <item>transparent-dark-robo</item>
     </string-array>
     <string-array name="sortAppListEntries">
         <item>From A to Z</item>

@@ -167,7 +167,8 @@ public class AppResult extends Result {
         
         if (icon == null) {
             Drawable mDrawable = KissApplication.getIconsHandler(context).getDrawableIconForPackage(className);
-            icon = ColorNormalizer.convertToGrayscale(mDrawable);
+            //icon = ColorNormalizer.convertToGrayscale(mDrawable);
+            icon = mDrawable;
         }
                 
         return icon;

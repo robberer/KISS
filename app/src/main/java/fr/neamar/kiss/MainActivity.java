@@ -124,6 +124,8 @@ public class MainActivity extends ListActivity implements QueryInterface {
             setTheme(R.style.AppThemeSemiTransparentDark);
         } else if (theme.equals("transparent-dark")) {
             setTheme(R.style.AppThemeTransparentDark);
+        } else if (theme.equals("transparent-dark-robo")) {
+            setTheme(R.style.AppThemeTransparentDarkRobo);
         }
 
 
